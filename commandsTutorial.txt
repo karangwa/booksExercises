@@ -1,0 +1,11 @@
+To configure username: git config --global user.name "New Name"
+To configure email: git config --global user.email "New Email"
+To check git account settings: git config --list
+To check one item from the settings list: git config item.name
+
+pwd: print working directory
+cd: change directory
+~: home
+
+git init: Initializes a Git repository
+git add . : add all the changes made to current (.) file
