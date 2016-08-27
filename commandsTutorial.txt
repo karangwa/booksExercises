@@ -20,6 +20,9 @@ git diff: shows modifications that were made (working copy vs repository copy). 
 git diff --staged: shows modifications between working copy vs staging copy
 
 git status: compares the working directory to the repository (mumbo jumbo)
+git checkout: takes repository copy replace working copy ==> cancels changes made to working copy not yet committed
+
+
 
 --	To rename a file	--
 	1rst Way
@@ -38,3 +41,20 @@ git status: compares the working directory to the repository (mumbo jumbo)
 	git init	//Initializes an empty git repository DirectoryName
 	git add .. 	//Adds all files and subdirectories in DirectoryName
 	git commit -m "Adding DirectoryName" 	
+
+	To unstage a file
+	----------------------
+	git reset HEAD fileName.extension
+
+	To revert to a previous commit
+	-----------------------------------------
+	git checkout partOfCheckoutId -- fileName.extension
+	git commit -m "Committed back to previous commit"
+
+	Setting up a remote to your github page
+	-----------------------------------------------------
+	git remote add githubAlias https://github.com/username/repository.git	//Creating an alias for the webpage
+	git remote	//Prints github remote alias
+
+	To push files to public repository on server/github
+	git push -u githubAlias master	//Asks you for your username & password
