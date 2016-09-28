@@ -1,6 +1,7 @@
 /********************************************************************************	
- *				Title															*
+ *				Displaying a Diamond											*
  *	Program prints a diamond shape using the for loop							* 
+ *	PS: I complicated the heck out of my solution								*
  * 	C++ How To Program Deitel 8th Edition Exercise 5.23  						*
  ********************************************************************************/
  
@@ -8,16 +9,34 @@
  
 int main()
 {
+	
 	for (int row = 0; row < 9; ++row)
 	{
-		for (int col = 0; col < 9; ++col)
-			std::cout << '*';
+		if (row <= 4)
+		{
+			for (int col = 0; col < 9; ++col)
+				if ((col + row) >= 4 && (col + row) <= (4 + row * 2))
+					std::cout << '*';
+				else
+					std::cout << ' ';
+		}
+		else
+		{
+			for (int col = 0; col < 9; ++col)
+				if (!((col + row) <= 12 && (col + row) >= (4 + 2 * (row % 4))))
+					std::cout << ' ';
+				else
+				{
+					if (row == 8 && (col + row) < 12)
+						std::cout << ' ';
+					else
+						std::cout << '*';
+				}
+					
+		}
+
 
 		std::cout << '\n';
 	}
 }
-/*
-5.23 (Diamond of Asterisks) Write a program that prints the following diamond shape. You may
-use output statements that print a single asterisk (*), a single blank or a single newline. Maximize
-your use of repetition (with nested for statements) and minimize the number of output statements.
-*/
+ 
